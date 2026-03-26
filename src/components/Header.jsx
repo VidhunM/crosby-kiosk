@@ -1,23 +1,23 @@
-import React from 'react';
+import logo from '../assets/logo1.png';
 
 const Header = () => {
   return (
-    <header className="site-header">
-      <div className="logo-container">
-        <span className="logo-icon">⚖️</span>
-        <span className="logo-text">Crosby Kiosk</span>
-      </div>
-      <nav className="site-nav">
-        <ul className="nav-links">
-          <li><a href="#helpdesk">Company</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#benefits">Benefits</a></li>
-          <li><a href="#workspaces">Workspaces</a></li>
-        </ul>
-        <div className="nav-actions">
-          <button className="btn btn-primary">Join Now</button>
+    <header className="header">
+      <div className="section-container">
+        <div className="logo-wrapper">
+          <a href="#hero">
+            <img src={logo} alt="Crosby Kiosk Logo" className="header-logo-img" />
+          </a>
         </div>
-      </nav>
+        <nav className="nav">
+          <a href="#solution">Solutions</a>
+          <a href="#services">Services</a>
+          <a href="#how-it-works">Process</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#about">About</a>
+          <a href="#request-demo" className="btn btn-primary">Request Demo</a>
+        </nav>
+      </div>
     </header>
   );
 };

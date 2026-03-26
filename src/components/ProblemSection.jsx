@@ -1,53 +1,58 @@
 import React from 'react';
 
 const ProblemSection = () => {
-  const sectionStyle = {
-    position: 'relative',
-    overflow: 'hidden',
-    backgroundColor: '#fff',
-    backgroundImage: `url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop')`,
-    backgroundSize: '40% auto',
-    backgroundPosition: 'right bottom',
-    backgroundRepeat: 'no-repeat',
-  };
+  const problems = [
+    {
+      title: "Cost Prohibitive",
+      desc: "Startups and MSMEs can’t afford full-time legal teams",
+      icon: "💰"
+    },
+    {
+      title: "Expensive Mistakes",
+      desc: "Compliance mistakes lead to costly consequences",
+      icon: "⚠️"
+    },
+    {
+      title: "Growth Bottleneck",
+      desc: "Delays in legal processes slow down growth",
+      icon: "🐢"
+    },
+    {
+      title: "Infrastructural Gap",
+      desc: "Coworking spaces lack real business infrastructure",
+      icon: "🏢"
+    }
+  ];
 
   return (
-    <section className="problem-section-horizontal" style={sectionStyle}>
-      <h2 className="problem-header-text">MODERN BUSINESSES NEED LEGAL SUPPORT — BUT RARELY HAVE IT</h2>
-
-      <div className="problem-items-container">
-        <div className="problem-card-mini">
-          <span className="warning-icon">⚠️</span>
-          <div className="problem-card-text">
-            <strong>Startups cannot afford</strong>
-            <p>full-time legal teams.</p>
-          </div>
+    <section className="problem-section">
+      <div className="section-container">
+        <div className="problem-header">
+          <h2 className="section-title">Legal Support is Critical, But Still Out of Reach.</h2>
+          <p className="problem-intro">
+            For most growing businesses, legal support is either too expensive, 
+            too slow, or too complicated.
+          </p>
+        </div>
+        
+        <div className="problem-grid">
+          {problems.map((p, i) => (
+            <div key={i} className="problem-card">
+              <div className="problem-icon">{p.icon}</div>
+              <div className="problem-card-content">
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="problem-card-mini">
-          <span className="warning-icon">⚠️</span>
-          <div className="problem-card-text">
-            <strong>Compliance mistakes</strong>
-            <p>become expensive</p>
-          </div>
-        </div>
-
-        <div className="problem-card-mini">
-          <span className="warning-icon">⚠️</span>
-          <div className="problem-card-text">
-            <strong>Legal documentation</strong>
-            <p>slows execution</p>
+        <div className="problem-footer">
+          <div className="problem-closing-line">
+            Legal support exists but not in a way that’s accessible, predictable, or built into your workflow.
           </div>
         </div>
       </div>
-
-      <div className="problem-footer-line">
-        <span className="dot-marker"></span>
-        <p>Crosby Kiosk embeds legal support directly into the workspace.</p>
-      </div>
-
-      {/* Subtle overlay to fade the background image */}
-      <div className="bg-fade-overlay"></div>
     </section>
   );
 };

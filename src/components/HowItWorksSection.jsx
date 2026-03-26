@@ -34,46 +34,51 @@ const HowItWorksSection = () => {
       number: 3,
       title: "Legal Support",
       description: "Qualified lawyers provide consultation and documentation support.",
-      icon: (
-        <svg viewBox="0 0 100 100" className="step-illustration">
-          <circle cx="50" cy="50" r="40" fill="#f0f4f2" opacity="0.5" />
-          <path d="M30 70 H70 M35 70 V65 H65 V70" fill="none" stroke="#2d4a3e" strokeWidth="4" />
-          <rect x="40" y="30" width="20" height="10" transform="rotate(-30 50 35)" fill="#2d4a3e" />
-          <rect x="47" y="40" width="6" height="25" transform="rotate(-30 50 45)" fill="#2d4a3e" />
-        </svg>
-      )
+      number: "1",
+      title: "Access Crosby Kiosk",
+      desc: "Start via your coworking space or directly as a business",
+      icon: "🏢"
     },
     {
-      number: 4,
-      title: "Simple Billing",
-      description: "Subscription or usage-based pricing.",
-      icon: (
-        <svg viewBox="0 0 100 100" className="step-illustration">
-          <circle cx="50" cy="50" r="40" fill="#f0f4f2" opacity="0.5" />
-          <rect x="35" y="25" width="30" height="40" rx="2" fill="none" stroke="#2d4a3e" strokeWidth="3" />
-          <path d="M42 35 H58 M42 45 H58 M42 55 H50" stroke="#2d4a3e" strokeWidth="2" />
-          <circle cx="65" cy="70" r="12" fill="#2d4a3e" />
-          <text x="65" y="75" textAnchor="middle" fill="white" style={{ fontSize: '12px', fontWeight: 'bold' }}>$</text>
-        </svg>
-      )
+      number: "2",
+      title: "Submit Your Request",
+      desc: "Raise your legal queries or service needs in minutes",
+      icon: "📝"
+    },
+    {
+      number: "3",
+      title: "Get Expert Support",
+      desc: "Our legal professionals handle your request efficiently",
+      icon: "⚖️"
+    },
+    {
+      number: "4",
+      title: "Pay Transparently",
+      desc: "Choose prepaid plans or pay per use—no surprises",
+      icon: "💳"
     }
   ];
 
   return (
-    <section id="process" className="how-it-works-section">
-      <div className="hiw-container">
-        <h2>How It Works</h2>
-        <div className="steps-grid">
-          {steps.map((step) => (
-            <div key={step.number} className="hiw-step">
-              <div className="hiw-visual">
-                <div className="hiw-number">{step.number}</div>
-                {step.icon}
+    <section className="how-it-works-section">
+      <div className="section-container">
+        <div className="how-header">
+          <h2 className="section-title">Legal Help, Simplified</h2>
+          <p className="how-intro">Our workflow is designed for speed and clarity.</p>
+        </div>
+        
+        <div className="how-timeline">
+          {steps.map((step, i) => (
+            <div key={i} className="how-step">
+              <div className="step-badge">
+                <span className="step-num">{step.number}</span>
               </div>
-              <div className="hiw-content">
+              <div className="step-visual">{step.icon}</div>
+              <div className="step-content">
                 <h3>{step.title}</h3>
-                <p>{step.description}</p>
+                <p>{step.desc}</p>
               </div>
+              {i < steps.length - 1 && <div className="step-connector"></div>}
             </div>
           ))}
         </div>

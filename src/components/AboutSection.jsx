@@ -1,25 +1,49 @@
 import React from 'react';
 
 const AboutSection = () => {
+  const expertise = [
+    "Corporate law",
+    "Employment law",
+    "Dispute resolution",
+    "Regulatory compliance"
+  ];
+
   return (
     <section className="about-section">
-      <div className="about-grid">
-        <div className="about-visual">
-           <div className="visual-card">
-             <span className="visual-icon">🏛️</span>
-             <h3>Crosby Kiosk is a</h3>
-             <p>centralized legal support platform available to all coworking members.</p>
-           </div>
-        </div>
-        <div className="about-content">
-          <h2>WHAT IS CROSBY KIOSK</h2>
-          <ul className="check-list">
-            <li><span className="check">✓</span> Contract drafting & review</li>
-            <li><span className="check">✓</span> Business compliance guidance</li>
-            <li><span className="check">✓</span> Startup legal consultation</li>
-            <li><span className="check">✓</span> Employment & HR documentation</li>
-            <li><span className="check">✓</span> Dispute and advisory support</li>
-          </ul>
+      <div className="section-container">
+        <div className="about-grid">
+          <div className="about-visual">
+            <div className="legal-seal">
+              <div className="seal-inner">
+                <span className="seal-icon">⚖️</span>
+                <span className="seal-text">Crosby Law Associates</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="about-content">
+            <h2 className="section-title">Backed by Real Legal Expertise – “Crosby Law Associates”</h2>
+            <p className="about-description">
+              Crosby Kiosk is powered by experienced legal professionals who understand business realities. 
+              We bring years of practical experience to every request.
+            </p>
+            
+            <div className="expertise-list">
+              <h3>Our expertise includes:</h3>
+              <div className="expertise-grid">
+                { expertise.map((item, i) => (
+                  <div key={i} className="expertise-item">
+                    <span className="check">✓</span>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <p className="about-closing">
+              Practical, reliable, and business-focused—every step of the way.
+            </p>
+          </div>
         </div>
       </div>
     </section>
