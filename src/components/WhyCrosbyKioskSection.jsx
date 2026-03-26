@@ -15,20 +15,44 @@ const WhyCrosbyKioskSection = () => {
           <div className="comparison-card traditional">
             <h3>What You’re Used To:</h3>
             <ul className="comparison-list">
-              <li><span>❌</span> Expensive retainers</li>
-              <li><span>❌</span> Unpredictable billing</li>
-              <li><span>❌</span> Slow response times</li>
-              <li><span>❌</span> Complex onboarding</li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+                Expensive retainers
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+                Unpredictable billing
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+                Slow response times
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+                Complex onboarding
+              </li>
             </ul>
           </div>
           
           <div className="comparison-card crosby">
             <h3>What You Get With Crosby Kiosk:</h3>
             <ul className="comparison-list">
-              <li><span>✅</span> Prepaid, transparent pricing</li>
-              <li><span>✅</span> Instant access to legal support</li>
-              <li><span>✅</span> Seamless integration into your workflow</li>
-              <li><span>✅</span> Scalable for any business size</li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                Prepaid, transparent pricing
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                Instant access to legal support
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                Seamless integration into your workflow
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                Scalable for any business size
+              </li>
             </ul>
           </div>
         </div>

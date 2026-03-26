@@ -4,58 +4,35 @@ const HowItWorksSection = () => {
   const steps = [
     {
       number: 1,
-      title: "Coworking Partnership",
-      description: "Workspace integrates Crosby Kiosk as a member service.",
+      title: "Access Crosby Kiosk",
+      desc: "Start via your coworking space or directly as a business",
       icon: (
-        <svg viewBox="0 0 100 100" className="step-illustration">
-          <circle cx="50" cy="50" r="40" fill="#f0f4f2" opacity="0.5" />
-          <path d="M30 60 L45 75 L75 45" fill="none" stroke="#2d4a3e" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M25 55 Q20 50 25 45 L35 35 Q40 30 45 35 L55 45" fill="none" stroke="#2d4a3e" strokeWidth="3" />
-          <path d="M75 55 Q80 50 75 45 L65 35 Q60 30 55 35 L45 45" fill="none" stroke="#2d4a3e" strokeWidth="3" />
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></svg>
       )
     },
     {
       number: 2,
-      title: "Member Access",
-      description: "Members submit legal queries through the portal or kiosk desk.",
+      title: "Submit Your Request",
+      desc: "Raise your legal queries or service needs in minutes",
       icon: (
-        <svg viewBox="0 0 100 100" className="step-illustration">
-          <circle cx="50" cy="50" r="40" fill="#f0f4f2" opacity="0.5" />
-          <rect x="25" y="35" width="40" height="30" rx="2" fill="none" stroke="#2d4a3e" strokeWidth="3" />
-          <rect x="30" y="40" width="30" height="20" fill="#2d4a3e" opacity="0.2" />
-          <path d="M45 65 L45 75 M35 75 L55 75" stroke="#2d4a3e" strokeWidth="3" />
-          <circle cx="75" cy="65" r="10" fill="none" stroke="#2d4a3e" strokeWidth="3" />
-          <path d="M75 60 V70 M70 65 H80" stroke="#2d4a3e" strokeWidth="2" />
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
       )
     },
     {
       number: 3,
-      title: "Legal Support",
-      description: "Qualified lawyers provide consultation and documentation support.",
-      number: "1",
-      title: "Access Crosby Kiosk",
-      desc: "Start via your coworking space or directly as a business",
-      icon: "🏢"
-    },
-    {
-      number: "2",
-      title: "Submit Your Request",
-      desc: "Raise your legal queries or service needs in minutes",
-      icon: "📝"
-    },
-    {
-      number: "3",
       title: "Get Expert Support",
       desc: "Our legal professionals handle your request efficiently",
-      icon: "⚖️"
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m14 13-5 5a1 1 0 0 1-1.4 0L4 14.4a1 1 0 0 1 0-1.4l5-5"/><path d="m16 16 3-3a1 1 0 0 0 0-1.4l-4.6-4.6a1 1 0 0 0-1.4 0L10 10"/><path d="m7 7 3-3a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4L13 13"/><path d="m2 21 8-8"/></svg>
+      )
     },
     {
-      number: "4",
+      number: 4,
       title: "Pay Transparently",
       desc: "Choose prepaid plans or pay per use—no surprises",
-      icon: "💳"
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      )
     }
   ];
 
@@ -76,7 +53,7 @@ const HowItWorksSection = () => {
               <div className="step-visual">{step.icon}</div>
               <div className="step-content">
                 <h3>{step.title}</h3>
-                <p>{step.desc}</p>
+                <p className="step-desc">{step.desc}</p>
               </div>
               {i < steps.length - 1 && <div className="step-connector"></div>}
             </div>

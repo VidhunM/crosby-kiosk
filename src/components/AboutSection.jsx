@@ -1,4 +1,4 @@
-import React from 'react';
+import helpdeskLogo from '../assets/helpdesk_logo.png';
 
 const AboutSection = () => {
   const expertise = [
@@ -15,7 +15,7 @@ const AboutSection = () => {
           <div className="about-visual">
             <div className="legal-seal">
               <div className="seal-inner">
-                <span className="seal-icon">⚖️</span>
+                <img src={helpdeskLogo} alt="Crosby Law Associates" className="seal-logo" />
                 <span className="seal-text">Crosby Law Associates</span>
               </div>
             </div>
@@ -33,7 +33,9 @@ const AboutSection = () => {
               <div className="expertise-grid">
                 { expertise.map((item, i) => (
                   <div key={i} className="expertise-item">
-                    <span className="check">✓</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="expertise-check">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
                     {item}
                   </div>
                 ))}

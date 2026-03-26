@@ -102,8 +102,11 @@ const FinalCTASection = () => {
                 ></textarea>
               </div>
               
-              <button type="submit" className="btn btn-primary btn-full">
-                👉 Book My Demo
+              <button type="submit" className="btn btn-primary btn-full btn-with-icon">
+                <span>Book My Demo</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="btn-icon">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
               </button>
             </form>
           </div>
