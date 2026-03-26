@@ -76,12 +76,12 @@ body {
 /* Hero Section */
 /* Hero Section */
 .hero-section {
-  padding: 130px 0 100px; /* Reduced top padding */
+  padding: 100px 0 80px; /* Reduced padding for a tighter look */
   background: 
     radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(26, 58, 42, 0.04) 0%, transparent 40%),
     var(--bg-light);
-  min-height: 85vh; /* Balanced height */
+  min-height: 70vh; /* Further reduced height */
   display: flex;
   align-items: center;
   position: relative;
@@ -97,27 +97,27 @@ body {
 
 .hero-headline {
   font-family: var(--font-heading);
-  font-size: 3.8rem;
+  font-size: 3.2rem; /* Reduced from 3.8rem for better professionalism */
   font-weight: 800;
-  margin-bottom: 2rem;
-  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
   color: var(--primary);
   letter-spacing: -0.02em;
 }
 
 .hero-subheadline {
-  font-size: 1.6rem;
+  font-size: 1.3rem; /* Reduced from 1.6rem */
   color: var(--primary-light);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-weight: 600;
   font-family: var(--font-heading);
 }
 
 .hero-body-copy {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Reduced from 1.2rem */
   color: var(--text-muted);
-  margin-bottom: 3.5rem;
-  max-width: 580px;
+  margin-bottom: 3rem;
+  max-width: 550px;
   line-height: 1.8;
 }
 
@@ -139,8 +139,8 @@ body {
 }
 
 .btn-large {
-  padding: 1.2rem 2.5rem;
-  font-size: 1.1rem;
+  padding: 0.9rem 2.2rem;
+  font-size: 1rem;
 }
 
 .btn-primary {
@@ -910,9 +910,9 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 90px; /* Increased height */
+  height: 80px; /* Reduced from 90px */
   padding: 0;
-  background: rgba(255,255,255,0.98);
+  background: rgba(255,255,255,0.95);
   backdrop-filter: blur(15px);
   z-index: 1000;
   border-bottom: 1px solid rgba(0,0,0,0.08);
@@ -931,14 +931,14 @@ body {
 
 .logo-wrapper {
   position: relative;
-  width: 280px; /* Increased width for larger logo */
-  height: 90px;
+  width: 240px; /* Adjusted to match smaller logo */
+  height: 80px;
   display: flex;
   align-items: center;
 }
 
 .header-logo-img {
-  height: 130px; /* Extra large */
+  height: 110px; /* Reduced from 130px for more professional scale */
   width: auto;
   position: absolute;
   top: -10px; /* Slight overhanging top/bottom */

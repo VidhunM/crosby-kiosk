@@ -3,7 +3,7 @@ import heroImage from '../assets/hero_legal_professional.png';
 const HeroSection = () => {
   return (
     <section className="hero-section">
-      <div className="hero-container">
+      <div className="section-container hero-container">
         <div className="hero-text-content">
           <div className="badge">India’s First Prepaid Legal Helpdesk Portal</div>
           <h1 className="hero-headline">
