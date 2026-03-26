@@ -10,7 +10,7 @@ const HeroSection = () => {
   return (
     <section className="hero" style={heroStyle}>
       <div className="hero-content">
-        <h1>Legal in Support<br />Built Into Your<br />Coworking Space</h1>
+        <h1>Legal Support<br />Built Into Your<br />Coworking Space</h1>
         <p className="hero-subtitle">
           A centralized legal helpdesk giving startups, freelancers and SMEs instant access to trusted legal services inside their workspace.
         </p>
