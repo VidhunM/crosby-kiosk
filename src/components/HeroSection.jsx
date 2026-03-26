@@ -10,7 +10,7 @@ const HeroSection = () => {
   return (
     <section className="hero" style={heroStyle}>
       <div className="hero-content">
-        <h1>Legal Support<br/>Built Into Your<br/>Coworking Space</h1>
+        <h1>Legal in Support<br />Built Into Your<br />Coworking Space</h1>
         <p className="hero-subtitle">
           A centralized legal helpdesk giving startups, freelancers and SMEs instant access to trusted legal services inside their workspace.
         </p>
@@ -21,15 +21,15 @@ const HeroSection = () => {
       </div>
       <div className="hero-image">
         <div className="kiosk-illustration">
-           <div className="kiosk-logo">Crosby Kiosk</div>
-           <div className="kiosk-graphics">
-             <svg viewBox="0 0 400 300" className="svg-illustration">
-               <rect x="50" y="50" width="300" height="200" fill="rgba(232, 245, 233, 0.8)" rx="10" />
-               <path d="M100 100 L300 100 L200 50 Z" fill="#2d4a3e" />
-               <text x="200" y="160" textAnchor="middle" fill="#2d4a3e" fontSize="40">⚖️</text>
-               <text x="200" y="220" textAnchor="middle" fill="#2d4a3e" fontSize="20" fontWeight="bold">Legal Services</text>
-             </svg>
-           </div>
+          <div className="kiosk-logo">Crosby Kiosk</div>
+          <div className="kiosk-graphics">
+            <svg viewBox="0 0 400 300" className="svg-illustration">
+              <rect x="50" y="50" width="300" height="200" fill="rgba(232, 245, 233, 0.8)" rx="10" />
+              <path d="M100 100 L300 100 L200 50 Z" fill="#2d4a3e" />
+              <text x="200" y="160" textAnchor="middle" fill="#2d4a3e" fontSize="40">⚖️</text>
+              <text x="200" y="220" textAnchor="middle" fill="#2d4a3e" fontSize="20" fontWeight="bold">Legal Services</text>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
