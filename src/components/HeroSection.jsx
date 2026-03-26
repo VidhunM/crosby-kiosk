@@ -1,4 +1,4 @@
-import React from 'react';
+import heroImage from '../assets/hero_legal_professional.png';
 
 const HeroSection = () => {
   return (
@@ -28,34 +28,11 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="hero-visual">
-          <div className="hero-card-stack">
-            <div className="hero-card card-1">
-              <div className="card-icon">⚖️</div>
-              <div className="card-info">
-                <h3>Expert Support</h3>
-                <p>On-demand legal help</p>
-              </div>
-            </div>
-            <div className="hero-card card-2">
-              <div className="card-icon">📄</div>
-              <div className="card-info">
-                <h3>Drafting</h3>
-                <p>Contract review in 24h</p>
-              </div>
-            </div>
-            <div className="hero-card card-3">
-              <div className="card-icon">🛡️</div>
-              <div className="card-info">
-                <h3>Compliance</h3>
-                <p>Stay tax & law ready</p>
-              </div>
-            </div>
+          <div className="hero-image-wrapper">
+            <img src={heroImage} alt="Professional Legal Helpdesk" className="hero-main-image" />
+            <div className="hero-image-decoration"></div>
           </div>
         </div>
-      </div>
-      <div className="hero-scroll-indicator">
-        <span>Scroll for more</span>
-        <div className="mouse"></div>
       </div>
     </section>
   );
