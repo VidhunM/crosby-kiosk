@@ -71,7 +71,7 @@ const HelpdeskSection = () => {
   ];
 
   return (
-    <section className="helpdesk-section">
+    <section id="helpdesk" className="helpdesk-section">
       <div className="helpdesk-container">
         <div className="helpdesk-header">
           <h2>A Legal Helpdesk Built for Coworking Communities</h2>

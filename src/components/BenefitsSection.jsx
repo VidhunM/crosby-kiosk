@@ -108,7 +108,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="benefits-split-section">
+    <section id="benefits" className="benefits-split-section">
       <div className="benefits-side members-side">
         <div className="side-content">
           <h2>For Coworking Members</h2>

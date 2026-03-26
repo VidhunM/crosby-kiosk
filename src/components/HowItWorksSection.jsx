@@ -60,7 +60,7 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="how-it-works-section">
+    <section id="process" className="how-it-works-section">
       <div className="hiw-container">
         <h2>How It Works</h2>
         <div className="steps-grid">

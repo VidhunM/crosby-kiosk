@@ -67,7 +67,7 @@ const IdealWorkspacesSection = () => {
   ];
 
   return (
-    <section className="ideal-workspaces-section">
+    <section id="workspaces" className="ideal-workspaces-section">
       <div className="ws-container">
         <h2>Ideal for These Workspaces</h2>
         <div className="ws-grid">

@@ -8,8 +8,15 @@ const Header = () => {
         <span className="logo-text">Crosby Kiosk</span>
       </div>
       <nav className="site-nav">
-        <button className="btn btn-outline">Login</button>
-        <button className="btn btn-primary">Join Now</button>
+        <ul className="nav-links">
+          <li><a href="#helpdesk">Company</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#workspaces">Workspaces</a></li>
+        </ul>
+        <div className="nav-actions">
+          <button className="btn btn-primary">Join Now</button>
+        </div>
       </nav>
     </header>
   );
