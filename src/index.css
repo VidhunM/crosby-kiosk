@@ -1693,6 +1693,11 @@ body {
     margin: 0 auto;
   }
 
+  .cta-highlight h3,
+  .form-group label {
+    text-align: left;
+  }
+
   .final-cta-section .section-title {
     font-size: 2.8rem;
   }
