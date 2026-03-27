@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import civilRightsIcon from '../assets/civil-rights.png';
 import contractIcon from '../assets/icons8-contract-50.png';
 import compliantIcon from '../assets/compliant.png';
@@ -7,6 +7,8 @@ import hammerIcon from '../assets/hammer.png';
 import corporateIcon from '../assets/corporate.png';
 
 const ServicesSection = () => {
+  const scrollRef = useRef(null);
+
   const services = [
     {
       title: "On-demand Legal Consultations",
@@ -34,6 +36,40 @@ const ServicesSection = () => {
     }
   ];
 
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let intervalId;
+    
+    // Auto-scroll logic for mobile
+    const startAutoScroll = () => {
+      if (window.innerWidth <= 768) {
+        intervalId = setInterval(() => {
+          if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 10) {
+            scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            scrollContainer.scrollBy({ left: scrollContainer.clientWidth * 0.8, behavior: 'smooth' });
+          }
+        }, 3500); // Slightly slower than problem section
+      }
+    };
+
+    startAutoScroll();
+
+    const handleResize = () => {
+      clearInterval(intervalId);
+      startAutoScroll();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearInterval(intervalId);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <section id="services" className="services-section">
       <div className="section-container">
@@ -44,17 +80,19 @@ const ServicesSection = () => {
           </p>
         </div>
         
-        <div className="services-grid">
-          {services.map((service, i) => (
-            <div key={i} className="service-card">
-              <div className="service-icon">
-                <img src={service.icon} alt={service.title} />
+        <div className="services-grid-wrapper">
+          <div className="services-grid" ref={scrollRef}>
+            {services.map((service, i) => (
+              <div key={i} className="service-card">
+                <div className="service-icon">
+                  <img src={service.icon} alt={service.title} />
+                </div>
+                <div className="service-content">
+                  <h3>{service.title}</h3>
+                </div>
               </div>
-              <div className="service-content">
-                <h3>{service.title}</h3>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

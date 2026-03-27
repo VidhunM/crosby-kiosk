@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import logo from '../assets/logo1.png';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="header">
       <div className="section-container">
@@ -9,13 +16,18 @@ const Header = () => {
             <img src={logo} alt="Crosby Kiosk Logo" className="header-logo-img" />
           </a>
         </div>
-        <nav className="nav">
-          <a href="#solution">Solutions</a>
-          <a href="#services">Services</a>
-          <a href="#how-it-works">Process</a>
-          <a href="#benefits">Benefits</a>
-          <a href="#about">About</a>
-          <a href="#request-demo">Request Demo</a>
+
+        <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle Navigation">
+          <span className={`hamburger ${isMenuOpen ? 'active' : ''}`}></span>
+        </button>
+
+        <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
+          <a href="#solution" onClick={() => setIsMenuOpen(false)}>Solutions</a>
+          <a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a>
+          <a href="#how-it-works" onClick={() => setIsMenuOpen(false)}>Process</a>
+          <a href="#benefits" onClick={() => setIsMenuOpen(false)}>Benefits</a>
+          <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+          <a href="#request-demo" className="btn btn-primary btn-nav" onClick={() => setIsMenuOpen(false)}>Request Demo</a>
         </nav>
       </div>
     </header>

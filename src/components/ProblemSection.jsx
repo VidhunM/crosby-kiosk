@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const ProblemSection = () => {
+  const scrollRef = useRef(null);
+  
   const problems = [
     {
       title: "Cost Prohibitive",
@@ -32,6 +34,40 @@ const ProblemSection = () => {
     }
   ];
 
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let intervalId;
+    
+    // Auto-scroll logic for mobile
+    const startAutoScroll = () => {
+      if (window.innerWidth <= 768) {
+        intervalId = setInterval(() => {
+          if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 10) {
+            scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            scrollContainer.scrollBy({ left: scrollContainer.clientWidth * 0.8, behavior: 'smooth' });
+          }
+        }, 3000);
+      }
+    };
+
+    startAutoScroll();
+
+    const handleResize = () => {
+      clearInterval(intervalId);
+      startAutoScroll();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearInterval(intervalId);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <section className="problem-section">
       <div className="section-container">
@@ -43,16 +79,18 @@ const ProblemSection = () => {
           </p>
         </div>
         
-        <div className="problem-grid">
-          {problems.map((p, i) => (
-            <div key={i} className="problem-card">
-              <div className="problem-icon">{p.icon}</div>
-              <div className="problem-card-content">
-                <h3>{p.title}</h3>
-                <p>{p.desc}</p>
+        <div className="problem-grid-wrapper">
+          <div className="problem-grid" ref={scrollRef}>
+            {problems.map((p, i) => (
+              <div key={i} className="problem-card">
+                <div className="problem-icon">{p.icon}</div>
+                <div className="problem-card-content">
+                  <h3>{p.title}</h3>
+                  <p>{p.desc}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="problem-footer">
