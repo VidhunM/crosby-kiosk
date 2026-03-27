@@ -76,19 +76,21 @@ body {
 /* Hero Section */
 /* Hero Section */
 .hero-section {
-  padding: 150px 0 100px;
-  /* Increased top padding to clear the 90px fixed header */
+  padding: 120px 0 60px;
+  /* Further reduced padding for a more compact footprint */
   background:
     radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(26, 58, 42, 0.04) 0%, transparent 40%),
     var(--bg-light);
-  min-height: 85vh;
-  /* Balanced height */
+  min-height: 65vh;
+  /* Ultra-compact height */
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
 }
+
+
 
 .hero-container {
   display: grid;
@@ -99,32 +101,35 @@ body {
 
 .hero-headline {
   font-family: var(--font-heading);
-  font-size: 3.2rem;
-  /* Reduced from 3.8rem for better professionalism */
+  font-size: 2.8rem;
+  /* Reduced for a more compact and streamlined look */
   font-weight: 800;
   margin-bottom: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.1;
   color: var(--primary);
   letter-spacing: -0.02em;
 }
 
+
 .hero-subheadline {
-  font-size: 1.3rem;
-  /* Reduced from 1.6rem */
+  font-size: 1.25rem;
+  /* Further reduced */
   color: var(--primary-light);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   font-weight: 600;
   font-family: var(--font-heading);
 }
 
+
 .hero-body-copy {
-  font-size: 1.1rem;
-  /* Reduced from 1.2rem */
+  font-size: 0.95rem;
+  /* Further reduced from 1.1rem */
   color: var(--text-muted);
-  margin-bottom: 3rem;
-  max-width: 550px;
-  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  line-height: 1.7;
 }
+
 
 .hero-cta-group {
   display: flex;
@@ -175,9 +180,12 @@ body {
 .hero-image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 480px;
+  /* Reduced from 600px for a more compact feel */
   animation: floatImg 6s ease-in-out infinite;
+  margin: 0 auto;
 }
+
 
 .hero-main-image {
   width: 100%;
@@ -652,7 +660,7 @@ body {
 
 /* Platform Features */
 .features-section {
-  padding: 120px 0;
+  padding: 70px 0;
 }
 
 .features-header {
@@ -766,7 +774,7 @@ body {
 
 /* How It Works */
 .how-it-works-section {
-  padding: 100px 0;
+  padding: 70px 0;
   background-color: var(--bg-light);
 }
 
@@ -861,7 +869,7 @@ body {
 
 /* Who It's For */
 .who-its-for-section {
-  padding: 120px 0;
+  padding: 70px 0;
 }
 
 .who-header {
@@ -955,7 +963,7 @@ body {
 
 /* Benefits Section */
 .benefits-section {
-  padding: 100px 0;
+  padding: 60px 0;
   background-color: var(--primary);
   color: var(--white);
 }
@@ -1034,7 +1042,7 @@ body {
 
 /* Why Crosby */
 .why-crosby-section {
-  padding: 120px 0;
+  padding: 60px 0;
   background-color: var(--bg-light);
 }
 
@@ -1115,7 +1123,7 @@ body {
 
 /* About Section */
 .about-section {
-  padding: 120px 0;
+  padding: 60px 0;
 }
 
 .about-grid {
