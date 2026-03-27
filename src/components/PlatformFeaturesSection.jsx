@@ -1,4 +1,5 @@
 import React from 'react';
+import dashboardMockup from '../assets/legal_platform_dashboard_mockup.png';
 
 const PlatformFeaturesSection = () => {
   const features = [
@@ -57,24 +58,13 @@ const PlatformFeaturesSection = () => {
           </div>
           
           <div className="features-visual">
-            <div className="platform-mockup">
-              <div className="mockup-header">
-                <div className="search-bar"></div>
-                <div className="user-icon"></div>
-              </div>
-              <div className="mockup-sidebar">
-                <div className="sidebar-item active"></div>
-                <div className="sidebar-item"></div>
-                <div className="sidebar-item"></div>
-              </div>
-              <div className="mockup-body">
-                <div className="body-card"></div>
-                <div className="body-card"></div>
-                <div className="body-grid">
-                  <div className="grid-item"></div>
-                  <div className="grid-item"></div>
-                </div>
-              </div>
+            <div className="platform-mockup-wrapper">
+              <img 
+                src={dashboardMockup} 
+                alt="Crosby Kiosk Dashboard Mockup" 
+                className="dashboard-image"
+              />
+              <div className="mockup-overlay"></div>
             </div>
           </div>
         </div>
