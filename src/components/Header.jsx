@@ -15,7 +15,7 @@ const Header = () => {
           <a href="#how-it-works">Process</a>
           <a href="#benefits">Benefits</a>
           <a href="#about">About</a>
-          <a href="#request-demo" className="btn btn-primary">Request Demo</a>
+          <a href="#request-demo">Request Demo</a>
         </nav>
       </div>
     </header>

@@ -74,7 +74,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="benefits-section">
+    <section id="benefits" className="benefits-section">
       <div className="section-container">
         <h2 className="section-title centered">Real Value for Every Partner</h2>
         

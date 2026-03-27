@@ -9,7 +9,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="about-section">
+    <section id="about" className="about-section">
       <div className="section-container">
         <div className="about-grid">
           <div className="about-visual">

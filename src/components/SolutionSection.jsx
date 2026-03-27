@@ -2,7 +2,7 @@ import React from 'react';
 
 const SolutionSection = () => {
   return (
-    <section className="solution-section">
+    <section id="solution" className="solution-section">
       <div className="section-container">
         <div className="solution-header">
           <h2 className="section-title">A Smarter Way to Access Legal Support</h2>
