@@ -363,10 +363,12 @@ body {
 .problem-closing-line {
   font-size: 1.4rem;
   font-family: var(--font-heading);
-  color: #ffffff; /* White Text */
+  color: #ffffff;
+  /* White Text */
   font-weight: 700;
   padding: 2.5rem;
-  background: #0d2a1c; /* Dark Green */
+  background: #0d2a1c;
+  /* Dark Green */
   border-radius: 12px;
   line-height: 1.4;
   box-shadow: 0 10px 30px rgba(13, 42, 28, 0.15);
@@ -421,14 +423,16 @@ body {
 
 .tag {
   padding: 0.8rem 1.5rem;
-  background: #0d2a1c; /* Dark Green */
+  background: #0d2a1c;
+  /* Dark Green */
   color: var(--white);
   border: 1px solid #0d2a1c;
   border-radius: 50px;
   font-weight: 600;
   display: flex;
   align-items: center;
-  cursor: default; /* Not clickable */
+  cursor: default;
+  /* Not clickable */
   gap: 0.8rem;
 }
 
@@ -452,14 +456,21 @@ body {
 
 .solution-footer .closing-line {
   display: inline-block;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #0d2a1c; /* Dark Green */
-  padding: 1.5rem 2.5rem;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(233, 196, 106, 0.35));
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  border-radius: 12px;
-  line-height: 1.4;
+  font-size: 1.8rem; /* Larger for splash impact */
+  font-family: var(--font-heading);
+  color: #0d2a1c;
+  /* Dark Green */
+  font-weight: 800;
+  padding: 4rem 6rem;
+  background-image: url('./assets/brushstroke_splash.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 0;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
 }
 
 .solution-visual {
@@ -1155,10 +1166,12 @@ body {
   display: inline-block;
   font-size: 1.4rem;
   font-family: var(--font-heading);
-  color: #ffffff; /* White Text */
+  color: #ffffff;
+  /* White Text */
   font-weight: 700;
   padding: 1.5rem 2.5rem;
-  background: #0d2a1c; /* Dark Green */
+  background: #0d2a1c;
+  /* Dark Green */
   border-radius: 12px;
   line-height: 1.4;
   box-shadow: 0 10px 30px rgba(13, 42, 28, 0.15);
@@ -1183,7 +1196,8 @@ body {
   padding: 3rem;
   border-radius: 50%;
   box-shadow: 0 20px 50px rgba(13, 42, 28, 0.1);
-  border: 4px solid #acc02e; /* Matched to provided image */
+  border: 4px solid #acc02e;
+  /* Matched to provided image */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1259,7 +1273,8 @@ body {
 .about-closing {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  color: #acc02e; /* Matched to provided image */
+  color: #acc02e;
+  /* Matched to provided image */
   font-weight: 700;
 }
 
@@ -1513,9 +1528,11 @@ body {
 .footer-contact-col {
   display: flex;
   flex-direction: column;
-  gap: 4rem; /* Increased separation */
+  gap: 4rem;
+  /* Increased separation */
   text-align: left;
-  padding-top: 4rem; /* Moved downwards */
+  padding-top: 4rem;
+  /* Moved downwards */
 }
 
 .contact-item h4 {
@@ -1541,15 +1558,18 @@ body {
 .contact-icon {
   width: 24px;
   height: 24px;
-  color: #0d2a1c; /* Dark Green */
+  color: #0d2a1c;
+  /* Dark Green */
   stroke-width: 2.5;
 }
 
 
 .footer-brand-col .footer-logo-img {
-  height: 200px; /* Slightly adjusted for side-by-side layout */
+  height: 200px;
+  /* Slightly adjusted for side-by-side layout */
   margin-bottom: 0;
-  margin-left: -20px; /* Compensate for logo whitespace */
+  margin-left: -20px;
+  /* Compensate for logo whitespace */
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -1699,6 +1719,132 @@ body {
 
 .hamburger.active {
   background: transparent;
+}
+
+/* Email Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 42, 28, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  animation: modalScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--primary);
+}
+
+.modal-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.modal-info {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.email-display-card {
+  background: #f8faf9;
+  border: 1px solid rgba(26, 58, 42, 0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.email-display-card code {
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.copy-btn {
+  padding: 0.8rem 2rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: #1a4d33;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 77, 51, 0.2);
+}
+
+.copy-btn.copied {
+  background: #10b981;
+}
+
+.modal-note {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .hamburger.active::before {

@@ -1,6 +1,17 @@
+import React, { useState } from 'react';
 import heroImage from '../assets/hero_legal_professional.png';
 
 const HeroSection = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const email = "crosbylawassociates@gmail.com";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section id="hero" className="hero-section">
       <div className="section-container hero-container">
@@ -22,14 +33,12 @@ const HeroSection = () => {
             <a href="#request-demo" className="btn btn-primary btn-large">
               Request a Demo
             </a>
-            <a 
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=crosbylawassociates@gmail.com" 
+            <button 
+              onClick={() => setShowModal(true)}
               className="btn btn-outline btn-large"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Partner With Crosby Kiosk
-            </a>
+            </button>
           </div>
         </div>
         <div className="hero-visual">
@@ -39,6 +48,27 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Email Modal */}
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setShowModal(false)}>&times;</button>
+            <h3>Partner With Us</h3>
+            <p className="modal-info">Reach out to our team directly via email:</p>
+            <div className="email-display-card">
+              <code>{email}</code>
+              <button 
+                className={`copy-btn ${copied ? 'copied' : ''}`} 
+                onClick={handleCopy}
+              >
+                {copied ? 'Copied!' : 'Copy Email'}
+              </button>
+            </div>
+            <p className="modal-note">We typically respond within 12-24 hours.</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
