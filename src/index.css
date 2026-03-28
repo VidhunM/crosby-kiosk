@@ -70,8 +70,9 @@ body {
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(45, 90, 65, 0.1);
-  color: var(--primary-light);
+  background: #0d2a1c;
+  /* Dark Green */
+  color: var(--white);
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -182,6 +183,23 @@ body {
   background: var(--primary);
   color: var(--white);
   transform: translateY(-5px);
+}
+
+/* Hero Section Specific Button Overrides */
+.hero-cta-group .btn {
+  background: var(--white) !important;
+  color: #0d2a1c !important;
+  /* Dark Green */
+  border: 1px solid #0d2a1c !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.hero-cta-group .btn:hover {
+  background: #0d2a1c !important;
+  /* Dark Green on Hover */
+  color: var(--white) !important;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(13, 42, 28, 0.2);
 }
 
 .hero-image-wrapper {
@@ -343,13 +361,15 @@ body {
 }
 
 .problem-closing-line {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: var(--font-heading);
-  color: var(--primary);
-  font-style: italic;
-  padding: 2rem;
-  background: rgba(212, 175, 55, 0.05);
-  border-radius: 8px;
+  color: #ffffff; /* White Text */
+  font-weight: 700;
+  padding: 2.5rem;
+  background: #0d2a1c; /* Dark Green */
+  border-radius: 12px;
+  line-height: 1.4;
+  box-shadow: 0 10px 30px rgba(13, 42, 28, 0.15);
 }
 
 /* Solution Section */
@@ -401,27 +421,24 @@ body {
 
 .tag {
   padding: 0.8rem 1.5rem;
-  background: var(--bg-light);
-  border: 1px solid var(--border);
+  background: #0d2a1c; /* Dark Green */
+  color: var(--white);
+  border: 1px solid #0d2a1c;
   border-radius: 50px;
   font-weight: 600;
-  transition: var(--transition);
   display: flex;
   align-items: center;
+  cursor: default; /* Not clickable */
   gap: 0.8rem;
 }
 
 .tag-icon {
   width: 18px;
   height: 18px;
-  stroke: var(--primary-light);
+  stroke: var(--white);
 }
 
-.tag:hover {
-  background: var(--primary);
-  color: var(--white);
-  border-color: var(--primary);
-}
+/* Hover effect removed as tags are non-clickable */
 
 .tag:hover .tag-icon {
   stroke: var(--white);
@@ -434,10 +451,15 @@ body {
 }
 
 .solution-footer .closing-line {
-  font-size: 1.2rem;
+  display: inline-block;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--primary);
-  opacity: 0.9;
+  color: #0d2a1c; /* Dark Green */
+  padding: 1.5rem 2.5rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(233, 196, 106, 0.35));
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 12px;
+  line-height: 1.4;
 }
 
 .solution-visual {
@@ -1126,6 +1148,20 @@ body {
 
 .why-footer {
   text-align: center;
+  margin-top: 5rem;
+}
+
+.why-footer .closing-line {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-family: var(--font-heading);
+  color: #ffffff; /* White Text */
+  font-weight: 700;
+  padding: 1.5rem 2.5rem;
+  background: #0d2a1c; /* Dark Green */
+  border-radius: 12px;
+  line-height: 1.4;
+  box-shadow: 0 10px 30px rgba(13, 42, 28, 0.15);
 }
 
 /* About Section */
@@ -1146,8 +1182,8 @@ body {
   background: var(--white);
   padding: 3rem;
   border-radius: 50%;
-  box-shadow: 0 20px 50px rgba(45, 90, 65, 0.1);
-  border: 10px double var(--secondary);
+  box-shadow: 0 20px 50px rgba(13, 42, 28, 0.1);
+  border: 4px solid #acc02e; /* Matched to provided image */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1223,7 +1259,7 @@ body {
 .about-closing {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  color: var(--secondary);
+  color: #acc02e; /* Matched to provided image */
   font-weight: 700;
 }
 
@@ -1397,12 +1433,16 @@ body {
 
 .nav a {
   font-weight: 600;
-  color: var(--text-muted);
+  color: #0d2a1c;
+  /* Dark Green */
   transition: var(--transition);
+  text-decoration: none;
+  /* Remove underlines */
 }
 
 .nav a:hover {
-  color: var(--primary);
+  color: #16a34a;
+  /* Bright Dark Green */
 }
 
 .btn-nav {
@@ -1452,11 +1492,11 @@ body {
 
 
 .footer-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-bottom: 40px;
   position: relative;
   z-index: 1;
 }
@@ -1466,21 +1506,53 @@ body {
 .footer-brand-col {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footer-contact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Increased separation */
+  text-align: left;
+  padding-top: 4rem; /* Moved downwards */
+}
+
+.contact-item h4 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+}
+
+.contact-item p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.contact-header {
+  display: flex;
   align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  color: #0d2a1c; /* Dark Green */
+  stroke-width: 2.5;
 }
 
 
 .footer-brand-col .footer-logo-img {
-  height: 240px;
-  /* Massive bold presence as requested */
+  height: 200px; /* Slightly adjusted for side-by-side layout */
   margin-bottom: 0;
+  margin-left: -20px; /* Compensate for logo whitespace */
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-
-
-
 
 .footer-brand-col .footer-logo-img:hover {
   transform: scale(1.05);
@@ -1489,10 +1561,10 @@ body {
 .footer-description {
   font-size: 1.15rem;
   line-height: 1.6;
-  margin-top: -1.2rem;
-  margin-bottom: 1rem;
-  max-width: 500px;
-  color: #064e3b;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 450px;
+  color: #4b5563;
 }
 
 
@@ -1564,7 +1636,7 @@ body {
   padding-top: 30px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-size: 1rem;
   color: #4b5563;
@@ -1651,10 +1723,22 @@ body {
   .cta-grid,
   .about-grid,
   .benefits-split,
-  .why-comparison {
+  .why-comparison,
+  .footer-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
     text-align: center;
+  }
+
+  .footer-brand-col,
+  .footer-contact-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-contact-col {
+    padding-top: 0;
+    gap: 2rem;
   }
 
   .hero-content {
@@ -1886,8 +1970,3 @@ body {
     font-size: 1rem;
   }
 }
-
-
-
-
-

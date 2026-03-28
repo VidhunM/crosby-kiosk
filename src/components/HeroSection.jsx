@@ -22,7 +22,12 @@ const HeroSection = () => {
             <a href="#request-demo" className="btn btn-primary btn-large">
               Request a Demo
             </a>
-            <a href="#partner" className="btn btn-outline btn-large">
+            <a 
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=crosbylawassociates@gmail.com" 
+              className="btn btn-outline btn-large"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Partner With Crosby Kiosk
             </a>
           </div>
