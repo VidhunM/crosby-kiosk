@@ -16,7 +16,7 @@ const FinalCTASection = () => {
 
     try {
       // Replace with your actual Google Apps Script Web App URL
-      const response = await fetch("https://script.google.com/macros/s/AKfycby6aPu05VFS8md4bqk1L7abN0-SiNrvhF5DSMKJafeL6prmZ9UeaVDn58C1sYns4Lcl/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxTJxQ1dWhU1de2467qDvmfM4wz82ilvE7__U0jF8k9Maawsl2eHLgUth2Qe8RznU-a/exec", {
         method: "POST",
         body: JSON.stringify(formData),
       });
