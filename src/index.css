@@ -1917,13 +1917,29 @@ body {
     text-align: center;
   }
 
+  .solution-footer {
+    padding: 4rem 1.5rem; /* Slightly more vertical air for multi-line on mobile */
+    overflow-x: hidden; /* SAFETY: Prevent any horizontal scroll */
+  }
+
   .brush-stroke-wrapper {
     padding: 1.5rem 1rem; /* Responsive padding */
+    width: 100%; /* Fill container width */
+    max-width: 90vw; /* Keep it within viewport */
+    margin: 0 auto;
+  }
+
+  .brush-stroke-wrapper::before {
+    width: 110%; /* Fit snugly on screen */
+    transform: translate(-50%, -50%) rotate(-0.5deg); /* RE-CENTER: prevent rightward bleed */
   }
 
   .brush-stroke-wrapper .closing-line {
     white-space: normal; /* Allow wrapping on small mobile for safety */
     transform: translateX(0) !important; /* Reset text shift on mobile for centering */
+    font-size: 1.35rem; /* Highly legible on mobile */
+    line-height: 1.3;
+    text-align: center;
   }
 
   .footer-brand-col,
