@@ -5,7 +5,7 @@ const WhyCrosbyKioskSection = () => {
     <section className="why-crosby-section">
       <div className="section-container">
         <div className="why-header">
-          <h2 className="section-title">More Than a Service—A Legal Infrastructure Layer</h2>
+          <h2 className="section-title">More Than a Service, a Legal Infrastructure Layer</h2>
           <p className="why-intro">
             Traditional legal models weren’t built for speed or scalability.
           </p>
@@ -53,7 +53,7 @@ const WhyCrosbyKioskSection = () => {
 
         <div className="why-footer">
           <p className="closing-line">
-            With Crosby Kiosk, legal becomes a growth enabler—not a bottleneck.
+            With Crosby Kiosk, legal becomes a growth enabler, not a bottleneck.
           </p>
         </div>
       </div>

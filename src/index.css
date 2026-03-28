@@ -1141,8 +1141,8 @@ body {
 }
 
 .legal-seal {
-  width: 300px;
-  height: 300px;
+  width: 380px;
+  height: 380px;
   background: var(--white);
   padding: 3rem;
   border-radius: 50%;
@@ -1170,7 +1170,7 @@ body {
 }
 
 .seal-logo {
-  width: 100px;
+  width: 240px;
   height: auto;
 }
 
@@ -1403,6 +1403,25 @@ body {
 
 .nav a:hover {
   color: var(--primary);
+}
+
+.btn-nav {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--white) !important;
+  opacity: 1 !important;
+}
+
+.btn-nav:hover {
+  background: var(--primary-light) !important;
+  color: var(--white) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(26, 58, 42, 0.2);
 }
 
 /* Advanced Footer */

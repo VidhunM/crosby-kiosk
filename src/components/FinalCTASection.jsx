@@ -8,11 +8,39 @@ const FinalCTASection = () => {
     phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Submitted:', formData);
-    alert('Thank you for your interest! We will get back to you soon.');
+    setIsSubmitting(true);
+
+    try {
+      // Replace with your actual Google Apps Script Web App URL
+      const response = await fetch("https://script.google.com/macros/s/AKfycby6aPu05VFS8md4bqk1L7abN0-SiNrvhF5DSMKJafeL6prmZ9UeaVDn58C1sYns4Lcl/exec", {
+        method: "POST",
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        alert("Form submitted successfully!");
+        setFormData({
+          name: '',
+          businessType: 'Your Business Type',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        alert(`Error submitting form: ${result.message || 'Unknown error'}`);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong!");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -104,11 +132,17 @@ const FinalCTASection = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary btn-full btn-with-icon">
-                <span>Book My Demo</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="btn-icon">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+              <button
+                type="submit"
+                className={`btn btn-primary btn-full btn-with-icon ${isSubmitting ? 'loading' : ''}`}
+                disabled={isSubmitting}
+              >
+                <span>{isSubmitting ? 'Submitting...' : 'Book My Demo'}</span>
+                {!isSubmitting && (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="btn-icon">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                )}
               </button>
             </form>
           </div>

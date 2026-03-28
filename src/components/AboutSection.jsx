@@ -1,4 +1,4 @@
-import helpdeskLogo from '../assets/helpdesk_logo.png';
+import claLogo from '../assets/cla.jpeg';
 
 const AboutSection = () => {
   const expertise = [
@@ -15,14 +15,13 @@ const AboutSection = () => {
           <div className="about-visual">
             <div className="legal-seal">
               <div className="seal-inner">
-                <img src={helpdeskLogo} alt="Crosby Law Associates" className="seal-logo" />
-                <span className="seal-text">Crosby Law Associates</span>
+                <img src={claLogo} alt="Crosby Law Associates" className="seal-logo" />
               </div>
             </div>
           </div>
           
           <div className="about-content">
-            <h2 className="section-title">Backed by Real Legal Expertise – “Crosby Law Associates”</h2>
+            <h2 className="section-title">Backed by Real Legal Expertise “Crosby Law Associates”</h2>
             <p className="about-description">
               Crosby Kiosk is powered by experienced legal professionals who understand business realities. 
               We bring years of practical experience to every request.
@@ -43,7 +42,7 @@ const AboutSection = () => {
             </div>
             
             <p className="about-closing">
-              Practical, reliable, and business-focused—every step of the way.
+              Practical, reliable, and business-focused, every step of the way.
             </p>
           </div>
         </div>
