@@ -450,27 +450,67 @@ body {
 
 .solution-footer {
   text-align: center;
-  margin-top: 5rem;
-  padding: 0 1rem;
+  margin-top: 4rem; /* Compact top margin */
+  padding: 3rem 2rem; /* Shorter footer background area */
+  position: relative;
+  /* Premium white stucco wall texture */
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(240,240,240,0.4) 0, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cfilter id='stucco-wall'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3CfeDiffuseLighting surfaceScale='2' lighting-color='white'%3E%3CfeDistantLight azimuth='45' elevation='60'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23stucco-wall)' opacity='0.25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden;
 }
 
-.solution-footer .closing-line {
-  display: inline-block;
-  font-size: 1.8rem; /* Larger for splash impact */
-  font-family: var(--font-heading);
-  color: #0d2a1c;
-  /* Dark Green */
-  font-weight: 800;
-  padding: 4rem 6rem;
-  background-image: url('./assets/brushstroke_splash.png');
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: none;
-  border-radius: 0;
-  line-height: 1.2;
+.brush-stroke-wrapper {
   position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
   z-index: 1;
+  max-width: 95vw;
+}
+
+.brush-stroke-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160%; /* Significantly wider overall */
+  height: 140%;
+  background: #F9D03D;
+  /* Pushing the sweep more towards the right side as requested */
+  transform: translate(-42%, -50%) rotate(-0.5deg);
+  z-index: -1;
+  /* PERFECT BRUSHSTROKE: Multi-layer SVG mask with biased right-side reach (viewBox 1000) */
+  mask-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' preserveAspectRatio='none'%3E%3Cfilter id='bristles'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.15 0.05' numOctaves='6' seed='42'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='25'/%3E%3C/filter%3E%3Crect x='40' y='30' width='920' height='140' filter='url(%23bristles)' fill='black'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' preserveAspectRatio='none'%3E%3Cfilter id='hairs'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4 0.02' numOctaves='3' seed='15'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='10'/%3E%3C/filter%3E%3Crect x='20' y='50' width='960' height='100' filter='url(%23hairs)' fill='black'/%3E%3C/svg%3E");
+  mask-size: 100% 100%;
+  -webkit-mask-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' preserveAspectRatio='none'%3E%3Cfilter id='bristles'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.15 0.05' numOctaves='6' seed='42'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='25'/%3E%3C/filter%3E%3Crect x='40' y='30' width='920' height='140' filter='url(%23bristles)' fill='black'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' preserveAspectRatio='none'%3E%3Cfilter id='hairs'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4 0.02' numOctaves='3' seed='15'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='10'/%3E%3C/filter%3E%3Crect x='20' y='50' width='960' height='100' filter='url(%23hairs)' fill='black'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  mask-composite: source-over;
+  -webkit-mask-composite: source-over;
+  /* Thick acrylic depth */
+  background-image: linear-gradient(175deg, rgba(255,255,255,0.15) 0%, transparent 40%, rgba(0,0,0,0.05) 100%);
+  box-shadow: 0 4px 15px rgba(249, 208, 61, 0.1);
+}
+
+.brush-stroke-wrapper .closing-line {
+  font-size: clamp(1.2rem, 3.5vw, 1.7rem);
+  /* Responsive sizing to prevent wrapping */
+  font-weight: 900;
+  color: #0d2a1c;
+  margin: 0;
+  line-height: 1;
+  position: relative;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  /* Force one line as per user wide-look request */
+  transform: translateX(-4.5rem);
+  text-shadow: 0 0.5px 0.5px rgba(255, 255, 255, 0.1);
 }
 
 .solution-visual {
@@ -1870,10 +1910,20 @@ body {
   .about-grid,
   .benefits-split,
   .why-comparison,
-  .footer-grid {
+  .footer-grid,
+  .brush-stroke-wrapper {
     grid-template-columns: 1fr;
     gap: 4rem;
     text-align: center;
+  }
+
+  .brush-stroke-wrapper {
+    padding: 1.5rem 1rem; /* Responsive padding */
+  }
+
+  .brush-stroke-wrapper .closing-line {
+    white-space: normal; /* Allow wrapping on small mobile for safety */
+    transform: translateX(0) !important; /* Reset text shift on mobile for centering */
   }
 
   .footer-brand-col,

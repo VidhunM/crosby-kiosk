@@ -76,9 +76,11 @@ const SolutionSection = () => {
         </div>
 
         <div className="solution-footer">
-          <p className="closing-line">
-            No complexity. No surprises. Just reliable legal support when you need it.
-          </p>
+          <div className="brush-stroke-wrapper">
+            <p className="closing-line">
+              No complexity. No surprises. Just reliable legal support when you need it.
+            </p>
+          </div>
         </div>
       </div>
     </section>
